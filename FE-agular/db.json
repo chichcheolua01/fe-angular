@@ -1,0 +1,52 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Thể thao"
+    },
+    {
+      "id": 2,
+      "name": "Giải trí"
+    },
+    {
+      "id": 3,
+      "name": "Chính trị"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "title": "Bài viết 1",
+      "category_id": 1,
+      "content": "Nội dung bài viết 1...",
+      "image": "https://picsum.photos/500/300"
+    },
+    {
+      "id": 2,
+      "title": "Bài viết 2",
+      "category_id": 2,
+      "content": "Nội dung bài viết 2...",
+      "image": "https://picsum.photos/500/300"
+    },
+    {
+      "id": 3,
+      "title": "Bài viết 3",
+      "category_id": 1,
+      "content": "Nội dung bài viết 3...",
+      "image": "https://picsum.photos/500/300"
+    },
+    {
+      "id": 4,
+      "title": "Bài viết 4",
+      "category_id": 3,
+      "content": "Nội dung bài viết 4...",
+      "image": "https://picsum.photos/500/300"
+    },
+    {
+      "title": "title 4",
+      "content": "nôi dun 4",
+      "image": "",
+      "id": 5
+    }
+  ]
+}

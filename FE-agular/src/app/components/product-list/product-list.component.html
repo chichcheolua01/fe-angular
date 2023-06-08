@@ -1,0 +1,36 @@
+<div class="bang-tintuc">
+  <h1>Bảng Tin Tức</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Tiêu đề</th>
+        <th>Nội dung</th>
+        <th>Hình ảnh</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="products && products.length">
+      <tr *ngFor="let product of products; index as i">
+        <td>{{ i }}</td>
+        <td>{{ product.title }}</td>
+        <td>{{ product.content }}</td>
+        <td class="image-cell">
+          <img src="{{ product.image }}" alt="Hình ảnh 1" />
+        </td>
+        <td class="button-container">
+          <a href="/admin/products/add">
+            <button class="">Create</button>
+          </a>
+          <a href="/admin/products/{{product.id}}/update">
+            <button class="">Edit</button>
+          </a>
+          <button class="btn btn-danger" (click)="removeItem(product.id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

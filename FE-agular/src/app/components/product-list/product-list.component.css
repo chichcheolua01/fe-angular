@@ -1,0 +1,43 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+
+  table th {
+    background-color: #f5f5f5;
+    text-align: left;
+  }
+
+  .image-cell img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  /* action */
+  .button-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .button-container button {
+    margin-right: 5px;
+    padding: 6px 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+  .button-container button:hover {
+    background-color: #45a049;
+  }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  
