@@ -30,6 +30,10 @@ const routes: Routes = [
         component: HomePageComponent,
       },
       {
+        path: 'post/:id',
+        component: PostDetailComponent,
+      },
+      {
         path: 'signin',
         component: SigninComponent,
       },
