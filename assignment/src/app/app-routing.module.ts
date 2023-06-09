@@ -4,8 +4,6 @@ import { UserLayoutComponent } from './layouts/user-layout/user-layout.component
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
-import { PostsPageComponent } from './pages/posts-page/posts-page.component';
-import { PostDetailPageComponent } from './pages/post-detail-page/post-detail-page.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { DashboardComponent } from './pages/admin/dashboard/dashboard.component';
 import { AdminPostPageComponent } from './pages/admin/admin-post-page/admin-post-page.component';
@@ -13,6 +11,9 @@ import { AdminCreatePostPageComponent } from './pages/admin/admin-create-post-pa
 import { AdminUpdatePostPageComponent } from './pages/admin/admin-update-post-page/admin-update-post-page.component';
 import { AdminUserPageComponent } from './pages/admin/admin-user-page/admin-user-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
+import { SectionLayoutComponent } from './layouts/section-layout/section-layout.component';
+import { SectionComponent } from './pages/section/section.component';
 
 const routes: Routes = [
   {
@@ -36,13 +37,15 @@ const routes: Routes = [
         path: 'signup',
         component: SignupComponent,
       },
+    ],
+  },
+  {
+    path: 'section',
+    component: SectionLayoutComponent,
+    children: [
       {
-        path: 'posts',
-        component: PostsPageComponent,
-      },
-      {
-        path: 'posts/:id',
-        component: PostDetailPageComponent,
+        path: ':id',
+        component: SectionComponent,
       },
     ],
   },

@@ -5,4 +5,5 @@ export interface ICategory {
   desc?: string;
   createdAt?: string;
   updatedAt?: string;
+  path?: string;
 }
