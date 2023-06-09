@@ -4,6 +4,7 @@ export interface IPost {
   content?: String;
   author?: String;
   categoryId?: String;
+  image?: String;
   createdAt?: String;
   updatedAt?: String;
 }
