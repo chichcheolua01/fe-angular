@@ -6,8 +6,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
-import { PostsPageComponent } from './pages/posts-page/posts-page.component';
-import { PostDetailPageComponent } from './pages/post-detail-page/post-detail-page.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
@@ -18,13 +16,17 @@ import { AdminUpdatePostPageComponent } from './pages/admin/admin-update-post-pa
 import { AdminUserPageComponent } from './pages/admin/admin-user-page/admin-user-page.component';
 import { UserLayoutComponent } from './layouts/user-layout/user-layout.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { CurrentDateComponent } from './components/current-date/current-date.component';
+
+import { SectionLayoutComponent } from './layouts/section-layout/section-layout.component';
+
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
+import { SectionComponent } from './pages/section/section.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    PostsPageComponent,
-    PostDetailPageComponent,
     SigninComponent,
     SignupComponent,
     NotFoundPageComponent,
@@ -35,6 +37,10 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     AdminUserPageComponent,
     UserLayoutComponent,
     AdminLayoutComponent,
+    CurrentDateComponent,
+    SectionLayoutComponent,
+    PostDetailComponent,
+    SectionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
