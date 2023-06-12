@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IPost } from 'src/app/interfaces/Post';
 import { PostService } from 'src/app/services/post.service';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
+
 
 @Component({
   selector: 'app-admin-post-page',
@@ -10,7 +12,6 @@ import { PostService } from 'src/app/services/post.service';
 export class AdminPostPageComponent implements OnInit {
   posts: IPost[] = [];
   categories: any[] = [];
-
   constructor(private postService: PostService) {}
 
   ngOnInit() {
@@ -29,14 +30,11 @@ export class AdminPostPageComponent implements OnInit {
     );
   }
 
-
-
   fetchCategories() {
     this.postService.getCategories().subscribe(
       (data) => {
         this.posts = data.posts;
-        console.log(this.posts);
-        
+        console.log(this.posts);   
       },
       (error) => {
         console.log('Có lỗi xảy ra khi lấy danh sách categories:', error);
