@@ -1,7 +1,10 @@
 export interface IUser {
-  _id?: String;
-  name?: String;
   email?: String;
   password?: String;
-  role?: String;
+}
+export interface ISignup {
+  name: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
 }
