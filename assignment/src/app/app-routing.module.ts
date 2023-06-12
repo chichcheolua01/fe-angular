@@ -79,7 +79,7 @@ const routes: Routes = [
       },
 
       {
-        path: 'posts/:id/edit',
+        path: 'posts/:id/update',
         component: AdminUpdatePostPageComponent,
       },
 

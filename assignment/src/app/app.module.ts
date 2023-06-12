@@ -22,6 +22,7 @@ import { SectionLayoutComponent } from './layouts/section-layout/section-layout.
 
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { SectionComponent } from './pages/section/section.component';
+import { CategoryListComponent } from './pages/admin/category-list/category-list/category-list.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { SectionComponent } from './pages/section/section.component';
     SectionLayoutComponent,
     PostDetailComponent,
     SectionComponent,
+    CategoryListComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
