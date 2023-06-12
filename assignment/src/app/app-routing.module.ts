@@ -33,14 +33,6 @@ const routes: Routes = [
         path: 'post/:id',
         component: PostDetailComponent,
       },
-      {
-        path: 'signin',
-        component: SigninComponent,
-      },
-      {
-        path: 'signup',
-        component: SignupComponent,
-      },
     ],
   },
 
@@ -53,6 +45,21 @@ const routes: Routes = [
         component: SectionComponent,
       },
     ],
+    
+  },
+  {
+    path:'',
+    component: SectionLayoutComponent,
+    children:[
+      {
+        path: 'signin',
+        component: SigninComponent,
+      },
+      {
+        path: 'signup',
+        component: SignupComponent,
+      },
+    ]
   },
 
   {

@@ -17,10 +17,11 @@
         class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500">
     </div>
 
-    <div class="mb-4">
-      <label class="block text-gray-700 text-sm font-bold mb-2" for="title">categoryId:</label>
-      <input type="text" id="categoryID" name="categoryId" [(ngModel)]="posts.categoryId" required
-        class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-blue-500">
+    <div>
+        <label for="category">Danh mục:</label>
+        <select id="category" [(ngModel)]="posts.categoryId" name="category">
+          <option *ngFor="let category of categories" [value]="category._id">{{ category.name }}</option>
+        </select>
     </div>
 
     <div class="mb-4">

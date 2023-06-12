@@ -10,6 +10,7 @@ import { AuthService } from './auth.service';
 })
 export class PostService {
   API: string = 'http://localhost:8080/api/posts';
+  apiUrl: string = 'http://localhost:8080/api';
   accessToken: string = ''; 
   constructor(private http: HttpClient , private authService: AuthService) {}
   getCategories(): Observable<any> {
@@ -23,6 +24,12 @@ export class PostService {
   getCategory(id: string): Observable<any> {
     return this.http.get<any>(`${this.API}/${id}`);
   }
+  
+  getCategoryId(): Observable<any> {
+    const url = `${this.apiUrl}/categories`;
+    return this.http.get(url);
+  }
+
   removeCategory(id: string): Observable<any> {
     const accessToken = this.authService.getAccessToken(); // Lấy accessToken từ AuthService
     const headers = new HttpHeaders().set('Authorization', `Bearer ${accessToken}`);

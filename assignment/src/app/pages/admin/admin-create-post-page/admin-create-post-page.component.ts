@@ -15,15 +15,34 @@ export class AdminCreatePostPageComponent {
     content: '',
     author: '',
     image:'',
-    categoryId: '',
+    categoryId:{
+      id:'',
+      name:''
+    },
   };
-
+  categories: any[] = [];
   constructor(
     private postService: PostService,
     private router: Router,
     private authService: AuthService
   ) {}
 
+  ngOnInit() {
+    this.getCategoryName()
+  }
+
+  getCategoryName(): void {
+    this.postService.getCategoryId().subscribe(
+      (data) => {
+        this.categories = data.categories; 
+        console.log(this.categories);
+      },
+      (error) => {
+        console.log('Có lỗi xảy ra khi lấy danh sách danh mục:', error);
+      }
+    );
+
+  }
   addProduct() {
     const accessToken = this.authService.getAccessToken();
     this.postService.createCategory(this.posts).subscribe(
