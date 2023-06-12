@@ -15,7 +15,10 @@ export class AdminUpdatePostPageComponent {
     title: '',
     content: '',
     author: '',
-    categoryId: '',
+    categoryId:{
+      id:'',
+      name: '',
+    },
   };
   constructor(
     private postService: PostService,

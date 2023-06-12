@@ -35,20 +35,6 @@ const routes: Routes = [
       },
     ],
   },
-  {
-    path: '',
-    component: SectionLayoutComponent,
-    children: [
-      {
-        path: 'signin',
-        component: SigninComponent,
-      },
-      {
-        path: 'signup',
-        component: SignupComponent,
-      },
-    ],
-  },
 
   {
     path: 'section',
@@ -59,6 +45,21 @@ const routes: Routes = [
         component: SectionComponent,
       },
     ],
+    
+  },
+  {
+    path:'',
+    component: SectionLayoutComponent,
+    children:[
+      {
+        path: 'signin',
+        component: SigninComponent,
+      },
+      {
+        path: 'signup',
+        component: SignupComponent,
+      },
+    ]
   },
 
   {

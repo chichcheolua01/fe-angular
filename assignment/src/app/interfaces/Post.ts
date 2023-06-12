@@ -3,8 +3,11 @@ export interface IPost {
   title?: String;
   content?: String;
   author?: String;
-  categoryId?: String;
-  image?: String;
+  categoryId?: {
+    id?: string;
+    name: string;
+  };
+  image?: string;
   createdAt?: String;
   updatedAt?: String;
 }
