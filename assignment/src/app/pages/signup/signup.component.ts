@@ -5,22 +5,21 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent {
   auth: ISignup = {
-    name:'',
-    email:'',
-    password:'',
-    confirmPassword:''
-  }
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  };
 
-  constructor(private authService: AuthService , private router:Router ) {}
-
-  signup(){
-    this.authService.signup(this.auth).subscribe(data=>{
+  constructor(private authService: AuthService, private router: Router) {}
+  signup() {
+    this.authService.signup(this.auth).subscribe((data) => {
       console.log(data);
-    this.router.navigate(['/signin'])
-    })
+      this.router.navigate(['/signin']);
+    });
   }
 }

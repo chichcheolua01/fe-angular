@@ -13,7 +13,7 @@ export class PostService {
   apiUrl: string = 'http://localhost:8080/api';
   accessToken: string = ''; 
   constructor(private http: HttpClient , private authService: AuthService) {}
-  getCategories(): Observable<any> {
+  getPosts(): Observable<any> {
     return this.http.get<any>(`${this.API}`);
   }
 
@@ -21,7 +21,7 @@ export class PostService {
     return new HttpHeaders().set('Authorization', `Bearer ${this.accessToken}`);
   }
 
-  getCategory(id: string): Observable<any> {
+  getPost(id: string): Observable<any> {
     return this.http.get<any>(`${this.API}/${id}`);
   }
   
@@ -30,17 +30,17 @@ export class PostService {
     return this.http.get(url);
   }
 
-  removeCategory(id: string): Observable<any> {
+  removePost(id: string): Observable<any> {
     const accessToken = this.authService.getAccessToken(); // Lấy accessToken từ AuthService
     const headers = new HttpHeaders().set('Authorization', `Bearer ${accessToken}`);
     return this.http.delete<any>(`${this.API}/${id}`,{headers});
   }
-  createCategory(post: any): Observable<any> {
+  createPost(post: any): Observable<any> {
     const accessToken = this.authService.getAccessToken(); // Lấy accessToken từ AuthService
     const headers = new HttpHeaders().set('Authorization', `Bearer ${accessToken}`);
     return this.http.post(`${this.API}`,post,{ headers } );
   }
-  updateCategory(post: any,id:any,  accessToken: string): Observable<any> {
+  updatePost(post: any,id:any,  accessToken: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ${accessToken}`
