@@ -40,13 +40,17 @@
           dolorum aliquam, quibusdam aperiam voluptatum.
         </p>
 
-        <form action="#" class="mt-8 grid grid-cols-6 gap-6">
+        <form
+          action="#"
+          (ngSubmit)="signup()"
+          class="mt-8 grid grid-cols-6 gap-6"
+        >
           <div class="col-span-6 sm:col-span-3">
             <label
               for="FirstName"
               class="block text-sm font-medium text-gray-700"
             >
-              First Name
+              First Name & Last Name
             </label>
 
             <input
@@ -54,22 +58,7 @@
               id="FirstName"
               name="first_name"
               class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-            />
-          </div>
-
-          <div class="col-span-6 sm:col-span-3">
-            <label
-              for="LastName"
-              class="block text-sm font-medium text-gray-700"
-            >
-              Last Name
-            </label>
-
-            <input
-              type="text"
-              id="LastName"
-              name="last_name"
-              class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+              [(ngModel)]="auth.name"
             />
           </div>
 
@@ -83,6 +72,7 @@
               id="Email"
               name="email"
               class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+              [(ngModel)]="auth.email"
             />
           </div>
 
@@ -99,6 +89,7 @@
               id="Password"
               name="password"
               class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+              [(ngModel)]="auth.password"
             />
           </div>
 
@@ -115,6 +106,7 @@
               id="PasswordConfirmation"
               name="password_confirmation"
               class="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
+              [(ngModel)]="auth.confirmPassword"
             />
           </div>
 

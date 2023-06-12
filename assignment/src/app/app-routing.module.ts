@@ -49,6 +49,7 @@ const routes: Routes = [
       },
     ],
   },
+
   {
     path: 'section',
     component: SectionLayoutComponent,
@@ -59,6 +60,7 @@ const routes: Routes = [
       },
     ],
   },
+
   {
     path: 'admin',
     component: AdminLayoutComponent,
@@ -75,27 +77,24 @@ const routes: Routes = [
       {
         path: 'posts',
         component: AdminPostPageComponent,
-        children: [
-          {
-            path: 'add',
-            component: AdminCreatePostPageComponent,
-          },
-          {
-            path: ':id/update',
-            component: AdminUpdatePostPageComponent,
-          },
-        ],
       },
+      
+      {
+        path: 'posts/add',
+        component: AdminCreatePostPageComponent,
+      },
+
+      {
+        path: 'posts/:id/update',
+        component: AdminUpdatePostPageComponent,
+      },
+
       {
         path: 'users',
         component: AdminUserPageComponent,
       },
     ],
-  },
-  {
-    path: '**',
-    component: NotFoundPageComponent,
-  },
+  }
 ];
 
 @NgModule({
