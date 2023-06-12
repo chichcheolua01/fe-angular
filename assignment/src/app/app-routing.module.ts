@@ -33,6 +33,12 @@ const routes: Routes = [
         path: 'post/:id',
         component: PostDetailComponent,
       },
+    ],
+  },
+  {
+    path: '',
+    component: SectionLayoutComponent,
+    children: [
       {
         path: 'signin',
         component: SigninComponent,
