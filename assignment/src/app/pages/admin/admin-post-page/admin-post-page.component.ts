@@ -31,7 +31,7 @@ export class AdminPostPageComponent implements OnInit {
   }
 
   fetchCategories() {
-    this.postService.getCategories().subscribe(
+    this.postService.getPosts().subscribe(
       (data) => {
         this.posts = data.posts;
         console.log(this.posts);   
@@ -43,7 +43,7 @@ export class AdminPostPageComponent implements OnInit {
   }
 
   removeItem(id: any) {
-    this.postService.removeCategory(id).subscribe(
+    this.postService.removePost(id).subscribe(
       () => {
         console.log('Bạn đã xóa thành công');
         this.posts = this.posts.filter((item) => item._id !== id);

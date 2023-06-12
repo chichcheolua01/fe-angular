@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatPaginatorModule } from '@angular/material/paginator';
-
 import { AppRoutingModule } from './app-routing.module';
+import { UpperCasePipe } from '@angular/common';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SigninComponent } from './pages/signin/signin.component';
@@ -46,7 +46,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SectionComponent,
     CategoryListComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule , MatPaginatorModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatPaginatorModule,
+    UpperCasePipe,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

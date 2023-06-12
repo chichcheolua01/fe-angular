@@ -16,6 +16,7 @@ import { SectionLayoutComponent } from './layouts/section-layout/section-layout.
 import { SectionComponent } from './pages/section/section.component';
 import { CategoryListComponent } from './pages/admin/category-list/category-list/category-list.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -30,10 +31,6 @@ const routes: Routes = [
         path: 'home',
         component: HomePageComponent,
       },
-      {
-        path: 'post/:id',
-        component: PostDetailComponent,
-      },
     ],
   },
 
@@ -46,12 +43,11 @@ const routes: Routes = [
         component: SectionComponent,
       },
     ],
-    
   },
   {
-    path:'',
+    path: '',
     component: SectionLayoutComponent,
-    children:[
+    children: [
       {
         path: 'signin',
         component: SigninComponent,
@@ -60,7 +56,11 @@ const routes: Routes = [
         path: 'signup',
         component: SignupComponent,
       },
-    ]
+      {
+        path: 'post/:id',
+        component: PostDetailComponent,
+      },
+    ],
   },
 
   {
@@ -80,7 +80,7 @@ const routes: Routes = [
         path: 'posts',
         component: AdminPostPageComponent,
       },
-      
+
       {
         path: 'posts/add',
         component: AdminCreatePostPageComponent,
@@ -95,9 +95,9 @@ const routes: Routes = [
         path: 'users',
         component: AdminUserPageComponent,
       },
-      {path:'categories', component: CategoryListComponent}
+      { path: 'categories', component: CategoryListComponent },
     ],
-  }
+  },
 ];
 
 @NgModule({

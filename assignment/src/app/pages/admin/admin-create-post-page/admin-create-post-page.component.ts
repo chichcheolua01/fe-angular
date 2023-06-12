@@ -45,7 +45,7 @@ export class AdminCreatePostPageComponent {
   }
   addProduct() {
     const accessToken = this.authService.getAccessToken();
-    this.postService.createCategory(this.posts).subscribe(
+    this.postService.createPost(this.posts).subscribe(
       (data) => {
         console.log(data);
         this.router.navigate(['/admin/posts']);

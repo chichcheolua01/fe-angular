@@ -1,4 +1,4 @@
-import { Component , OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IPost } from 'src/app/interfaces/Post';
 import { PostService } from 'src/app/services/post.service';
 import { ActivatedRoute } from '@angular/router';
@@ -15,7 +15,7 @@ export class AdminUpdatePostPageComponent {
     title: '',
     content: '',
     author: '',
-    categoryId:{
+    categoryId: {
       name: '',
     },
   };
@@ -28,7 +28,7 @@ export class AdminUpdatePostPageComponent {
   ) {
     this.route.paramMap.subscribe((param) => {
       const id = String(param.get('id'));
-      this.postService.getCategory(id).subscribe(
+      this.postService.getPost(id).subscribe(
         (data) => {
           this.posts = data.post;
         },
@@ -36,25 +36,24 @@ export class AdminUpdatePostPageComponent {
       );
     });
   }
-  ngOnInit(){
-    this.getCategoryName()
+  ngOnInit() {
+    this.getCategoryName();
   }
   getCategoryName(): void {
     this.postService.getCategoryId().subscribe(
       (data) => {
-        this.categories = data.categories; 
+        this.categories = data.categories;
         console.log(this.categories);
       },
       (error) => {
         console.log('Có lỗi xảy ra khi lấy danh sách danh mục:', error);
       }
     );
-
   }
   onHandleSubmit() {
     const accessToken = this.authService.getAccessToken();
     this.postService
-      .updateCategory(this.posts, this.posts._id, accessToken)
+      .updatePost(this.posts, this.posts._id, accessToken)
       .subscribe(
         (data) => {
           console.log(data.posts);
