@@ -6,4 +6,5 @@ export interface ICategory {
   createdAt?: string;
   updatedAt?: string;
   path?: string;
+  // ffefewfewf
 }
