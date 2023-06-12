@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,7 @@ import { SectionLayoutComponent } from './layouts/section-layout/section-layout.
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { SectionComponent } from './pages/section/section.component';
 import { CategoryListComponent } from './pages/admin/category-list/category-list/category-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,7 @@ import { CategoryListComponent } from './pages/admin/category-list/category-list
     SectionComponent,
     CategoryListComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule , MatPaginatorModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

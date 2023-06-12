@@ -14,6 +14,7 @@ import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.com
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { SectionLayoutComponent } from './layouts/section-layout/section-layout.component';
 import { SectionComponent } from './pages/section/section.component';
+import { CategoryListComponent } from './pages/admin/category-list/category-list/category-list.component';
 
 const routes: Routes = [
   {
@@ -86,7 +87,7 @@ const routes: Routes = [
       },
 
       {
-        path: 'posts/:id/update',
+        path: 'posts/:id/edit',
         component: AdminUpdatePostPageComponent,
       },
 
@@ -94,6 +95,7 @@ const routes: Routes = [
         path: 'users',
         component: AdminUserPageComponent,
       },
+      {path:'categories', component: CategoryListComponent}
     ],
   }
 ];

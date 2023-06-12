@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , OnInit } from '@angular/core';
 import { IPost } from 'src/app/interfaces/Post';
 import { PostService } from 'src/app/services/post.service';
 import { ActivatedRoute } from '@angular/router';
@@ -16,10 +16,10 @@ export class AdminUpdatePostPageComponent {
     content: '',
     author: '',
     categoryId:{
-      id:'',
       name: '',
     },
   };
+  categories: any[] = [];
   constructor(
     private postService: PostService,
     private route: ActivatedRoute,
@@ -35,6 +35,21 @@ export class AdminUpdatePostPageComponent {
         (error) => console.log(error.message)
       );
     });
+  }
+  ngOnInit(){
+    this.getCategoryName()
+  }
+  getCategoryName(): void {
+    this.postService.getCategoryId().subscribe(
+      (data) => {
+        this.categories = data.categories; 
+        console.log(this.categories);
+      },
+      (error) => {
+        console.log('Có lỗi xảy ra khi lấy danh sách danh mục:', error);
+      }
+    );
+
   }
   onHandleSubmit() {
     const accessToken = this.authService.getAccessToken();

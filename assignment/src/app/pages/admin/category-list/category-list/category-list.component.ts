@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PostService } from 'src/app/services/post.service';
+import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
   selector: 'app-category-list',
@@ -9,16 +9,16 @@ import { PostService } from 'src/app/services/post.service';
 export class CategoryListComponent {
   categories: any[] = [];
 
-  constructor(private postService: PostService) {}
+  constructor(private categoryService: CategoryService) {}
 
   ngOnInit(): void {
     this.getCategories();
   }
 
   getCategories(): void {
-    this.postService.getCategories().subscribe(
+    this.categoryService.getCategories().subscribe(
       (data) => {
-        this.categories = data;
+        this.categories = data.categories;
       },
       (error) => {
         console.log('Có lỗi xảy ra khi lấy danh sách danh mục:', error);
