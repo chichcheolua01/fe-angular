@@ -49,6 +49,11 @@ const routes: Routes = [
     component: SectionLayoutComponent,
     children: [
       {
+        path: '',
+        redirectTo: 'signin',
+        pathMatch: 'full',
+      },
+      {
         path: 'signin',
         component: SigninComponent,
       },
